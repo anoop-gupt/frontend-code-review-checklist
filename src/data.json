@@ -1,0 +1,50 @@
+{
+    "code-formating": [
+        "Code alignments (there are multiple tools to align your code https://codebeautify.org/)",
+        "Ensuring the naming conventions.",
+        "Remove the commented code if you need to obtain some code later you can get it from version control"
+    ],
+    "architecture": [
+        "Split into multiple layers and tiers as per requirements (Presentation, Business and Data layers).",
+        "Split into respective files (HTML, JavaScript and CSS).(not applicable to everyone )",
+        "Code is in sync with existing code patterns/technologies."
+    ],
+    "coding-best-practices": [
+        "No hard coding, use constants/configuration values.",
+        "Group similar values under an enumeration (enum)",
+        "Avoid multiple if/else blocks. Don't create piramids of if/else",
+        "Appropriate name for variables, functions and classes.",
+        "Comments – Do not write comments for what you are doing, instead write comments on why you are doing. Specify about any hacks, workaround and temporary fixes. Additionally, mention pending tasks in your to-do comments, which can be tracked easily."
+    ],
+    "non-funcatinal": [{
+            "Maintainability": [
+                "The application should require the least amount of effort to support in near future. It should be easy to identify and fix a defect.",
+                "Readability: Code should be self-explanatory. If you are taking more time to understand the code, then either code needs refactoring or at least comments have to be written to make it clear.",
+                "Testability: The code should be easy to test. Refactor into a separate function (if required). Test coverage , test quality",
+                "Debuggability: Provide support to log the flow of control, parameter data and exception details to find the root cause easily. (always good to have)",
+                "Configurability: Keep the configurable values in place  (XML file, database table) so that no code changes are required, if the data is changed frequently."
+            ]
+        },
+        {
+            "Reusability": [
+                "DRY (Do not Repeat Yourself) principle: The same code should not be repeated more than twice.",
+                "Consider reusable services, functions and components.",
+                "Consider generic functions and classes."
+            ]
+        },
+        {
+            "Security": [
+                "Authentication, authorization, input data validation against security threats such as SQL injections and Cross Site Scripting (XSS), encrypting the sensitive data (passwords, credit card information etc.)"
+            ]
+        }, {
+            "Accessibility": [
+                "You should make sure about the accessibility of the application across the platform"
+            ]
+        }
+    ],
+    "tools": [
+        "The first step while assessing the code quality of the entire project is through a static code analysis tool. Use the tools (based on technology) such as SonarQube, NDepend, FxCop, TFS code analysis rules.",
+        "Use plug-ins such as Resharper, which suggests the best practices in Visual studio.",
+        "To track the code review comments use the tools like Git, Bitbucket etc. code review process."
+    ]
+}

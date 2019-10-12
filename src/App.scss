@@ -1,0 +1,94 @@
+.App{
+  box-shadow: 0px 2px 5px #5d5d5d;
+  background :#9dd18e;
+}
+.App-header {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: calc(24px + 2vmin);
+}
+.content{
+  padding-bottom: 5%;
+}
+
+.Collapsible {
+  background-color: white;
+  margin: 0 10%;
+}
+
+.Collapsible__contentInner {
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-top: 0;
+  background: #eeeeee;
+  font-size: calc(4px + 2vmin);
+  line-height: 20px;
+  .form-check{
+    padding: .5rem 2rem;
+    .form-check-label{
+      padding: 0 10px;
+    } 
+  }
+}
+
+.Collapsible__contentInner p {
+  margin-bottom: 10px;
+  padding: 0 10px;
+  font-size: calc(4px + 2vmin);
+  line-height: 20px;
+}
+
+.Collapsible__contentInner p:last-child {
+  margin-bottom: 0;
+}
+
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000000;
+  position: relative;
+  border: 1px solid #c5c5c5;
+  padding: 10px;
+  background: white;
+  font-size: calc(10px + 2vmin);
+}
+
+.Collapsible__trigger:after {
+  font-family: 'FontAwesome';
+  content: '\f107';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: block;
+  transition: transform 300ms;
+}
+
+.Collapsible__trigger.is-open:after {
+  transform: rotateZ(180deg);
+}
+
+.Collapsible__trigger.is-disabled {
+  opacity: 0.5;
+  background-color: grey;
+}
+
+.CustomTriggerCSS {
+  background-color: lightcoral;
+  transition: background-color 200ms ease;
+}
+
+.CustomTriggerCSS--open {
+  background-color: darkslateblue;
+}
+
+.Collapsible__custom-sibling {
+  padding: 5px;
+  font-size: 12px;
+  background-color: #CBB700;
+  color: black;
+}
