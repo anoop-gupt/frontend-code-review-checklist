@@ -1,4 +1,4 @@
-import React from "react";
+wimport React from "react";
 import Collapsible from "react-collapsible";
 import "./App.scss";
 import checkList from "./data.json";
@@ -6,7 +6,7 @@ import checkList from "./data.json";
 function App() {
   return (
     <div className="App container">
-      <header className="App-header">Code review CheckList</header>
+      <header className="App-header">Frontend - Code Review Checklist</header>
       <div className="content">
       <Collapsible trigger="Code Styling">
           {checkList["code-style"].map((data, index) => (
