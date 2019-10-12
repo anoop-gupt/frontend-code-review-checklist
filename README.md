@@ -47,10 +47,6 @@ my-app/
     index.js
     logo.svg
 ```
-## Start your app 
-By running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
-
-Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
 
 For the project to build, **these files must exist with exact filenames**:
 
@@ -69,6 +65,11 @@ You can, however, create more top-level directories.<br>
 They will not be included in the production build so you can use them for things like documentation.
 
 ## Available Scripts
+
+### Start your app 
+By running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
+
+Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
 
 In the project directory, you can run:
 
