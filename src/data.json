@@ -1,4 +1,14 @@
 {
+    "code-style": [
+        "Make sure code is unit testable.",
+        "if any helper method/function is being reused, make it as a separate JS module/file.",
+        "Avoid avoid nesting code too many levels deep.",
+        "Avoid large JS files, break it into multiple JS files.",
+        "Check of unnecessary 'Else' conditions",
+        "Type checking should be in place using Typescript or Flow",
+        "Exception handling should be in place",
+        "Do not leave debugging code in production code."    
+    ],
     "code-formating": [
         "Code alignments (there are multiple tools to align your code https://codebeautify.org/)",
         "Ensuring the naming conventions.",
