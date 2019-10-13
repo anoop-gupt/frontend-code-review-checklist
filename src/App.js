@@ -1,4 +1,4 @@
-wimport React from "react";
+import React from "react";
 import Collapsible from "react-collapsible";
 import "./App.scss";
 import checkList from "./data.json";
