@@ -21,6 +21,7 @@ An interactice application to provide a checklist on various aspect of frontend 
   </table>
 
 <br/>
+
 ### Collaborators
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <table>
