@@ -9,8 +9,8 @@
         "Exception handling should be in place",
         "Do not leave debugging code in production code.",
         "Code should be understandable, no short hand operators  should be used.",
-        "Is the same code duplicated more than twice?",
-        "Every function class should follow 'Single Responsibility Principle'"
+        "Is the same code duplicated more than twice?" , 
+        "Every function class should follow 'Single Responsibility Principle'."
     ],
     "Code formating": [
         "Code alignments (there are multiple tools to align your code https://codebeautify.org/)",
