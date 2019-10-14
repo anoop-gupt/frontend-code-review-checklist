@@ -5,7 +5,7 @@ An interactice application to provide a checklist on various aspect of frontend 
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/anoop-gupt/frontend-code-review-checklist?style=flat-square)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
 ![GitHub](https://img.shields.io/github/license/anoop-gupt/frontend-code-review-checklist?color=blue&style=flat-square)
 ![Work in Progress](https://img.shields.io/badge/Status-Work%20in%20progress-orange?style=flat-square)
@@ -16,10 +16,22 @@ An interactice application to provide a checklist on various aspect of frontend 
 <table>
 <tr>
    <td align="center"><a href="https://github.com/anoop-gupt"><img src="https://avatars2.githubusercontent.com/u/1118525?s=460&v=4" width="100px;" alt="Gopal Saini"/><br /><sub><b>Anoop Gupta</b></sub></a>
-  </td>
+  </td>  
+  </tr>
+  </table>
+
+<br/>
+
+### Collaborators
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<table>
+<tr>
+  
    <td align="center"><a href="https://github.com/Mayank02"><img src="https://avatars1.githubusercontent.com/u/7802472?s=460&v=4" width="100px;" alt="Gopal Saini"/><br /><sub><b>Mayank Singh</b></sub></a>
   </td>
     <td align="center"><a href="https://github.com/gsaini"><img src="https://avatars3.githubusercontent.com/u/1699577?s=460&v=4" width="100px;" alt="Gopal Saini"/><br /><sub><b>Gopal Saini</b></sub></a>
+  </td>
+    <td align="center"><a href="https://github.com/rammurat"><img src="https://avatars1.githubusercontent.com/u/2582780?s=460&v=4" width="100px;" alt="Gopal Saini"/><br /><sub><b>Ram Murat Sharma</b></sub></a>
   </td>  
   
   </tr>
