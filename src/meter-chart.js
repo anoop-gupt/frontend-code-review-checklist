@@ -7,7 +7,7 @@ const meterChart = (selectedWeights) => {
       ['Label', 'Value'],
       ['Meter', 0]
     ]
-    const finalWeight =50
+    const finalWeight = 0
   
     function drawChart() {
   
