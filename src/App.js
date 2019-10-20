@@ -1,23 +1,16 @@
-import React from "react";
-import Collapsible from "react-collapsible";
+import React, {Fragment} from "react";
 import "./App.scss";
 import checkList from "./data.json";
+import pieChart from './pie-chart'
+import meterChart from './meter-chart'
+const selectedOptions = []
 
-function App() {
-  return (
-    <div className="App container">
-      <header className="App-header">Frontend Code Review Checklist</header>
-      <div className="content">{Accordion(checkList)}</div>
-    </div>
-  );
-}
-
-function Accordion(category, header) {
-  if (Array.isArray(category)) {
-    return (
-      <Collapsible trigger={header} key={header}>
-        {category.map((data, index) => (
-          <div className="form-check" key={header + index}>
+function renderChildList(data) {
+    return (<Fragment>
+      {data.map((subCat, index) => (<div className='sub-list' key={subCat.title + index}>
+        <h4 className="breadcrumb">{subCat.title}</h4>
+          {subCat.items.map((row, index) => (
+          <div className="form-check" key={row.title + index}>
             <input
               className="form-check-input"
               type="checkbox"
@@ -25,22 +18,81 @@ function Accordion(category, header) {
               id="defaultCheck1"
             />
             <label className="form-check-label" htmlFor="defaultCheck1">
-              {data}
+              {row.title}
             </label>
           </div>
-        ))}
-      </Collapsible>
-    );
-  } else {
-    const categoryKeys = Object.keys(category);
-    return header ? (
-      <Collapsible trigger={header} key={header}>
-        {categoryKeys.map(keys => Accordion(category[keys], keys))}
-      </Collapsible>
-    ) : (
-      categoryKeys.map(keys => Accordion(category[keys], keys))
-    );
-  }
+          ))}
+        </div>))}
+    </Fragment>)
 }
+
+function renderParentList(data) {
+    return (<Fragment>
+        {data.length && data.map((cat, index) => (
+          <div className='list' key={cat.title + index} id={cat.linkId}>
+            <h4 className="breadcrumb">{cat.title}</h4>
+            {!cat.hasChilds && cat.items.map((row, index) => (
+              <div className="form-check" key={row + index}>
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="defaultCheck1"
+                />
+                <label className="form-check-label" htmlFor="defaultCheck1">
+                  {row.title}
+                </label>
+              </div>
+            ))}
+            {cat.hasChilds && renderChildList(cat.items)}
+          </div>
+        ))}
+    </Fragment>)
+}
+
+function App() {
+  return (
+    <div className="app-container">
+      {/** Header */}
+      <nav className="navbar navbar-dark bg-dark flex-md-nowrap p-0">
+        <a className="navbar-brand col-sm-3 col-md-3 mr-0" href="/">Frontend Code Review Checklist</a>
+      </nav>
+
+      <div className="container-fluid">
+      <div className="row">
+        {/** Sidebar menu */}
+        <nav className="col-md-2 col-lg-2 d-none d-md-block bg-light sidebar">
+          <div className="sidebar-sticky">
+            <ul className="nav flex-column mb-2">
+              {checkList.map((row, index) => (
+                <li className="nav-item" key={row.linkId + index} >
+                  <a className="nav-link" href={`#${row.linkId}`}>
+                    {row.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+
+        {/** Main content area */}
+        <main role="main" className="col-md-6 ml-sm-auto col-lg-6 pt-3 px-4">
+          <div className="content">{renderParentList(checkList)}</div>
+        </main>
+
+        {/** Chart area */}
+        <div className="sidebar col-md-4 col-lg-4">
+          <div className="sidebar-sticky">
+            <div id="piechart">{pieChart(checkList)}</div>
+            <div id="chart_div">{meterChart(selectedOptions)}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  );
+}
+
 
 export default App;
