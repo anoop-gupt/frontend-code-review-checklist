@@ -5,31 +5,55 @@ import pieChart from './pie-chart'
 import meterChart from './meter-chart'
 const selectedOptions = 0
 
-function Accordion(data) {
+function renderChildList(data) {
+  debugger
+    return (<Fragment>
+      {data.map((subCat, index) => (<div className='sub-list' key={subCat.title + index}>
+        <h4 className="breadcrumb">{subCat.title}</h4>
+          {subCat.items.map((row, index) => (
+          <div className="form-check" key={row.title + index}>
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="defaultCheck1"
+            />
+            <label className="form-check-label" htmlFor="defaultCheck1">
+              {row.title}
+            </label>
+          </div>
+          ))}
+        </div>))}
+    </Fragment>)
+}
+
+function renderParentList(data) {
   debugger
     return (<Fragment>
         {data.length && data.map((cat, index) => (
           <div className='list' key={cat.title + index} id={cat.linkId}>
             <h4 className="breadcrumb">{cat.title}</h4>
-            {cat.items.length && cat.items.map((row, index) => (
-              <div className="form-check" key={row + index}>
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="defaultCheck1"
-                />
-                <label className="form-check-label" htmlFor="defaultCheck1">
-                  {row.title}
-                </label>
-              </div>
+            {!cat.hasChilds && cat.items.map((row, index) => (
+              <Fragment>
+                <div className="form-check" key={row + index}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label className="form-check-label" htmlFor="defaultCheck1">
+                    {row.title}
+                  </label>
+                </div>
+                
+              </Fragment>
             ))}
+            {cat.hasChilds && renderChildList(cat.items)}
           </div>
         ))}
     </Fragment>)
 }
-
-
 
 function App() {
   return (
@@ -55,7 +79,7 @@ function App() {
         </nav>
 
         <main role="main" className="col-md-6 ml-sm-auto col-lg-6 pt-3 px-4">
-          <div className="content">{Accordion(checkList)}</div>
+          <div className="content">{renderParentList(checkList)}</div>
         </main>
         <div className="sidebar col-md-4 col-lg-4">
           <div className="sidebar-sticky">
