@@ -1,14 +1,17 @@
-const meterChart = (selectedWeight) => {
+const meterChart = (selectedWeights) => {
     const google = window.google
     google.charts.load('current', {'packages':['gauge']});
     google.charts.setOnLoadCallback(drawChart);
+
+    let _data = [
+      ['Label', 'Value'],
+      ['Meter', 0]
+    ]
+    const finalWeight =50
   
     function drawChart() {
   
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['Meter', 80]
-      ]);
+      var data = google.visualization.arrayToDataTable(_data);
   
       var options = {
           width: 200, height: 200,
@@ -23,9 +26,9 @@ const meterChart = (selectedWeight) => {
       chart.draw(data, options);
   
       setInterval(function() {
-        data.setValue(0, 1, selectedWeight);
+        data.setValue(0, 1, finalWeight);
         chart.draw(data, options);
-      }, 500);
+      }, 1000);
     }
 }
 export default meterChart
