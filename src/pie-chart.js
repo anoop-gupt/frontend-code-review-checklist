@@ -18,7 +18,10 @@ const pieChart = (items) => {
       var options = {
         title: 'Distribution Weight',
         is3D: true,
-        legend: 'right'
+        legend: {
+          position: 'bottom',
+          alignment: 'start'
+        }
       };
   
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
