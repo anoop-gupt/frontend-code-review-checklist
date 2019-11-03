@@ -3,7 +3,12 @@ import React, {Fragment} from "react";
 import checkList from "./data.json";
 import pieChart from './pie-chart'
 import meterChart from './meter-chart'
-const selectedOptions = []
+let meterValue = 0
+
+function updateMeterChart(e, weight) {
+  meterValue = e.target.checked ? meterValue + weight : meterValue - weight;
+  meterChart(meterValue)
+}
 
 function renderChildList(data) {
     return (<Fragment>
@@ -15,7 +20,9 @@ function renderChildList(data) {
               className="form-check-input"
               type="checkbox"
               value=""
-              id="defaultCheck1"
+              onClick={(e)=> {
+                updateMeterChart(e, row.weight)
+              }}
             />
             <label className="form-check-label" htmlFor="defaultCheck1">
               {row.title}
@@ -37,7 +44,9 @@ function renderParentList(data) {
                   className="form-check-input"
                   type="checkbox"
                   value=""
-                  id="defaultCheck1"
+                  onClick={(e)=> {
+                    updateMeterChart(e, row.weight)
+                  }}
                 />
                 <label className="form-check-label" htmlFor="defaultCheck1">
                   {row.title}
@@ -85,12 +94,11 @@ function App() {
                   <div className="sidebar-sticky">
                     <div id="piechart">{pieChart(checkList)}</div>
                     <h6 className="meter-heading">Your report</h6>
-                    <div id="chart_div">{meterChart(selectedOptions)}</div>
+                    <div id="chart_div">{meterChart(meterValue)}</div>
                   </div>
                 </div>
               </div>
             </main>
-
             
           </div>
           </div>
