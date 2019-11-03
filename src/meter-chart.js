@@ -14,7 +14,7 @@ const meterChart = (selectedWeights) => {
       var data = google.visualization.arrayToDataTable(_data);
   
       var options = {
-          width: 200, height: 200,
+          width: 150, height: 150,
           redFrom: 0, redTo: 25,
           yellowFrom:26, yellowTo: 75,
           greenFrom:76, greenTo: 100,
