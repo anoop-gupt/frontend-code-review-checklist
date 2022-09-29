@@ -109,7 +109,7 @@
             },
             {
                 "weight": 2,
-                "title": "Avoid multiple if/else blocks and use Switch() wherever you can. Don't create piramids of if/else."
+                "title": "Avoid multiple if/else blocks and use Switch() wherever you can. Don't create piramids of if/else. Replace Nested Conditional with Guard Clauses [https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html]"
             },
             {
                 "weight": 2,
